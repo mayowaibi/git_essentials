@@ -40,6 +40,6 @@ This is MediaVault. It is a piece of software with the main purpose of storing m
 This is MediaVault. It is a piece of software with the main purpose of storing movies and books and allowing users to keep track of their progress in them. They will have an account that they create, and securely login to said account. Within the account, the user has access to their own Media Vault where they can store movies and books. They can select movies from a wide range of available ones. With each movie and book in the vault, the user can assign a status such as 'completed', 'currently watching', and 'dropped'. This allows the user to keep track of media they have consumed.
 
 ## Running MediaVault
-To run MediaVault, simply compile and run the ###### MediaVault.java ###### file located in the userinterface package in the source folder.
+To run MediaVault, simply compile and run the **MediaVault.java** file located in the userinterface package in the source folder.
 
 
