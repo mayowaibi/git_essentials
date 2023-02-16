@@ -1,200 +1,45 @@
+# MediaVault Wiki
 
-# Table of contents
+Created by group 3 of EECS2311.
 
-- [Week 1](#week-1)
-  - [Mark Breakdown](#mark-breakdown)
-  - [Review](#review)
-    - [Java Structure](#java-structure)
-    - [Packages](#packages)
-    - [Memory Model](#memory-model)
-      - [Data Types & Addresses](#data-types--addresses)
-      - [Examples](#examples)
-        - [Primitives](#primitives)
-        - [Non-Primitives/References: Arrays](#non-primitivesreferences-arrays)
-      - [Function Calls](#function-calls)
-        - [Pass by Value](#pass-by-value)
-        - [Pass by Reference](#pass-by-reference)
-  - [Documentation - JavaDoc](#documentation---javadoc)
-  - [Testing & JUnit](#testing--junit)
-  - [Design by Contract](#design-by-contract)
-- [Lect 3: intro to recursion](#lect-3-intro-to-recursion)
-  - [Function Calls and Stack Frames](#function-calls-and-stack-frames)
-  - [Recursion](#recursion)
-  - [Tracing a Recursive Algo w/ Examples](#tracing-a-recursive-algo-w-examples)
-    - [Ex: Is the input a palindrome?](#ex-is-the-input-a-palindrome)
-  - [Basics of Recursion](#basics-of-recursion)
-  - [How to Design a Recursive Algo](#how-to-design-a-recursive-algo)
-- [Lect 4: Recursion Cont'd](#lect-4-recursion-contd)
-  - [Divide and Conquer - Find the sum of all the entries of an array](#divide-and-conquer---find-the-sum-of-all-the-entries-of-an-array)
-  - [Recursion is not always the best sol'n](#recursion-is-not-always-the-best-soln)
-  - [Misc recursion notes](#misc-recursion-notes)
-  - [Closing](#closing)
-- [Lecture 5: Finally Advanced Object-Oriented Programming](#lecture-5-finally-advanced-object-oriented-programming)
-  - [Variable Types](#variable-types)
-    - [Non-primitives](#non-primitives)
-  - [Classes](#classes)
-    - [Presenting a Class](#presenting-a-class)
-      - [Creation of a Class](#creation-of-a-class)
-  - [Objects](#objects)
-- [Lect 6: Constructors & Encapsulation](#lect-6-constructors--encapsulation)
-  - [Overloaded Constructors & Constructor Chaining](#overloaded-constructors--constructor-chaining)
-  - [Clone/Copy Constructor](#clonecopy-constructor)
-  - [Memory Diagrams](#memory-diagrams)
-    - [Slide 25](#slide-25)
-    - [Slide 26](#slide-26)
-  - [Garbage Collection Mechanism](#garbage-collection-mechanism)
-  - [In-Class Activity](#in-class-activity)
-  - [Encapsulation](#encapsulation)
-    - [Access Modifiers](#access-modifiers)
-    - [Setters & Getters](#setters--getters)
-    - [how do I know what to make private?](#how-do-i-know-what-to-make-private)
-    - [UML](#uml)
-  - [Why OOP?](#why-oop)
-- [Lect 7: Static vs Non-Statics](#lect-7-static-vs-non-statics)
-  - [Variables](#variables)
-  - [Methods](#methods)
-    - [Static Factory Method](#static-factory-method)
-      - [Why?](#why)
-- [Lect 8: Statics vs Non-Statics cont'd](#lect-8-statics-vs-non-statics-contd)
-  - [Class Invariants](#class-invariants)
-  - [Design by Contract (DBC) and Exception](#design-by-contract-dbc-and-exception)
-    - [Ex: unchecked exception](#ex-unchecked-exception)
-  - [Try... Catch statement](#try-catch-statement)
-  - [Junits and Exceptions](#junits-and-exceptions)
-- [Lect 9: Aggregations and Compositions](#lect-9-aggregations-and-compositions)
-  - [Aliasing](#aliasing)
-  - [Deep Copy](#deep-copy)
-  - [Immutability](#immutability)
-  - [Shallow Copying](#shallow-copying)
-- [Lect 10: Aggregations and Compositions Cont'd](#lect-10-aggregations-and-compositions-contd)
-  - [Review](#review)
-  - [Aliasing](#aliasing)
-  - [Deep copy](#deep-copy)
-  - [Shallow copy](#shallow-copy)
-  - [Object Relationships](#object-relationships)
-    - [Has-a relationships](#has-a-relationships)
-      - [Aggregation](#aggregation)
-        - [UML](#uml)
-        - [Example](#example)
-      - [Composition](#composition)
-        - [UML](#uml)
-        - [Example](#example)
-  - [Privacy Leak](#privacy-leak)
-    - [Example](#example)
-- [Lect 11: Inheritance](#lect-11-inheritance)
-  - [UML](#uml)
-- [Lect 12: Inheritance Cont'd](#lect-12-inheritance-contd)
-  - [Overridden Methods](#overridden-methods)
-    - [Example](#example)
-  - [How to Recognise an Inheritance Relationship](#how-to-recognise-an-inheritance-relationship)
-  - [Inheritance and Access Modifiers](#inheritance-and-access-modifiers)
-  - [Designing](#designing)
-  - [Non-Extendable Classes](#non-extendable-classes)
-  - [Single Inheritance - Deadly Diamond of Death](#single-inheritance---deadly-diamond-of-death)
-  - [Inheritance Summary](#inheritance-summary)
-  - [Overriding vs Overloading Methods](#overriding-vs-overloading-methods)
-  - [in-class](#in-class)
-  - [Queues](#queues)
-  - [`Object` Class](#object-class)
-- [Lect 13: Polymorphism](#lect-13-polymorphism)
-  - [Polymorphism](#polymorphism)
-    - [avoiding errors](#avoiding-errors)
-      - [Examples](#examples)
-    - [Polymorphism Summary](#polymorphism-summary)
-- [Lect 14: Static & Dynamic Binding - DBC & Inheritance & Polymorphism](#lect-14-static--dynamic-binding---dbc--inheritance--polymorphism)
-  - [Dynamic Binding](#dynamic-binding)
-  - [Static Binding](#static-binding)
-  - [DBC - Inheritance & Polymorphism](#dbc---inheritance--polymorphism)
-    - [Recall:](#recall)
-    - [Inheritance & Polymorphism](#inheritance--polymorphism)
-- [Lect 15: Exceptions](#lect-15-exceptions)
-  - [Exceptions](#exceptions)
-    - [What if an Exception happens?](#what-if-an-exception-happens)
-    - [How Do We Make Exceptions Help Us?](#how-do-we-make-exceptions-help-us)
-    - [Making An Exception](#making-an-exception)
-    - [Handling Exceptions](#handling-exceptions)
-      - [`throw-catch`](#throw-catch)
-      - [throw without catching](#throw-without-catching)
-    - [User-Defined vs Java Exceptions](#user-defined-vs-java-exceptions)
-    - [Exceptions and Inheritance](#exceptions-and-inheritance)
-    - [Misc Exception Tips](#misc-exception-tips)
-    - [Exceptions and Program Termination](#exceptions-and-program-termination)
-  - [`Object` Class Cont'd](#object-class-contd)
-    - [`toString`](#tostring)
-    - [`equals()`](#equals)
-- [Lect 16: Obligatory Methods (`Object` class)](#lect-16-obligatory-methods-object-class)
-  - [Housekeeping](#housekeeping)
-  - [Obligatory Methods](#obligatory-methods)
-    - [`equals()`](#equals)
-      - [Overriding](#overriding)
-      - [Checking Classtype - `getClass()`](#checking-classtype---getclass)
-      - [Applications - Searching Techniques](#applications---searching-techniques)
-  - [`hashCode()`](#hashcode)
-    - [Hash Tables](#hash-tables)
-    - [`hashCode()`](#hashcode)
-    - [Overriding](#overriding)
-- [Lect 17: Abstraction & Interfaces](#lect-17-abstraction--interfaces)
-  - [Abstract Classes & Methods](#abstract-classes--methods)
-    - [Abstract Classes](#abstract-classes)
-    - [Abstract Methods](#abstract-methods)
-    - [Summary](#summary)
-- [Lect 18: `Interface`, `Comparable`, and `compareTo()`](#lect-18-interface-comparable-and-compareto)
-  - [`Interface`](#interface)
-  - [`Comparable`](#comparable)
-    - [`compareTo()`](#compareto)
-- [Lect 19: Generics](#lect-19-generics)
-  - [Generic Types](#generic-types)
-    - [Why?](#why)
-  - [Inheritance (1)](#inheritance-1)
-    - [Array of Generics](#array-of-generics)
-  - [Inheritance (2)](#inheritance-2)
-  - [Multiple Parameters](#multiple-parameters)
-  - [Parameter Naming Conventions](#parameter-naming-conventions)
-  - [Generic Methods](#generic-methods)
-    - [Wrapper Class](#wrapper-class)
-  - [Generic Method Cont'd](#generic-method-contd)
-- [Lect 20: Generics Cont'd](#lect-20-generics-contd)
-  - [Bounded Type Parameters](#bounded-type-parameters)
-    - [Wildcards](#wildcards)
-      - [Upper Bound Wildcards](#upper-bound-wildcards)
-      - [Lower Bound Wildcards](#lower-bound-wildcards)
-      - [How To Use Wildcards](#how-to-use-wildcards)
-- [Lect 21: Abstract Data Types (Collections)](#lect-21-abstract-data-types-collections)
-  - [Abstract Data Type - ADT](#abstract-data-type---adt)
-    - [ADT Example: Stack](#adt-example-stack)
-  - [ADT & Abstract & Interface](#adt--abstract--interface)
-  - [ADT in Java - Collections, Lists and Sets](#adt-in-java---collections-lists-and-sets)
-    - [Collections](#collections)
-      - [Optional Methods](#optional-methods)
-  - [List](#list)
-  - [Set ADT](#set-adt)
-    - [Applications](#applications)
-- [Lect 22: Searching and Sorting](#lect-22-searching-and-sorting)
-  - [Searching](#searching)
-    - [Linear Search](#linear-search)
-    - [List-Based Binary Search](#list-based-binary-search)
-  - [Sorting](#sorting)
-    - [Selection sort](#selection-sort)
-    - [Merging Operation & Merge Sort](#merging-operation--merge-sort)
-      - [Merging Operation](#merging-operation)
-      - [Merge Sort](#merge-sort)
-  - [hw](#hw)
+## Members 
+* Isaac Ibidun
+* Herman Lim
+* Ruth Bezabeh
+* Mate Korognai
+* Muhammad Ehab Khan
 
-# Week 1
+## Table of Contents 
+- [Description](#description)
+- [Iteration 1](#review)
+  - [Overview](#overview)
+  - [Architecture](#architecture)
+        - [Backend](#backend)
+        - [User Interface](#user-interface)
+        - [Persistence](#persistence)
+- [Running MediaVault](#running-mediavault)
 
-## Mark Breakdown
+## Description
+This is MediaVault. It is a piece of software with the main purpose of storing movies and books and allowing users to keep track of their progress in them. They will have an account that they create, and securely login to said account. Within the account, the user has access to their own Media Vault where they can store movies and books. They can select movies from a wide range of available ones. With each movie and book in the vault, the user can assign a status such as 'completed', 'currently watching', and 'dropped'. This allows the user to keep track of media they have consumed.
 
-|                    | weight | comment                                          |
-|--------------------|--------|--------------------------------------------------|
-| in-class (iCocker) | 10%    | opens during lecture, usually open till midnight |
-| Labs               | 10%    | 10 labs, 1%/each, take home, 1 week              |
-| Programming Exams  | 40%    | 2 exams, 20%/each, take home, 1 week             |
-| Term test          | 20%    | in-person, written, closed-book                  |
-| Final exam         | ^      | ^                                                |
+## Iteration 1 
 
-50% rule:
-Earn at least 50% in written assessments.
+### Overview 
+For iteration 1, only the login UI has been implemented UI-wise. The functionality of User,
 
-Can be cumulative 50% across both written exams.
+### Architecture
+For iteration 1, only the login UI has been implemented UI-wise. The functionality of User,
 
-Your term test mark gets dropped if you're final exam mark is better.
+#### Backend
+For iteration 1, only the login UI has been implemented UI-wise. The functionality of User,
+
+#### User Interface
+For iteration 1, only the login UI has been implemented UI-wise. The functionality of User,
+
+#### Persistence
+For iteration 1, only the login UI has been implemented UI-wise. The functionality of User,
+
+## Running MediaVault
+To run MediaVault, simply compile and run the MediaVault.java file.
+
+
