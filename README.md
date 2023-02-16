@@ -20,7 +20,9 @@ Created by group 3 of EECS2311.
 - [Running MediaVault](#running-mediavault)
 
 ## Description
-This is MediaVault. It is a piece of software with the main purpose of storing movies and books and allowing users to keep track of their progress in them. They will have an account that they create, and securely login to said account. Within the account, the user has access to their own Media Vault where they can store movies and books. They can select movies from a wide range of available ones. With each movie and book in the vault, the user can assign a status such as 'completed', 'currently watching', and 'dropped'. This allows the user to keep track of media they have consumed.
+MediaVault is a software application with the main purpose of storing a collection of movies and books, and allowing users to keep track of their progress in them. Users are able to securely create an account and login to it. Within the account, users have access to their own 
+
+Media Vault where they can store movies and books. They can select movies from a wide range of available ones. With each movie and book in the vault, the user can assign a status such as 'completed', 'currently watching', and 'dropped'. This allows the user to keep track of media they have consumed.
 
 ## Iteration 1 
 
