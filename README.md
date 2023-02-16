@@ -14,9 +14,9 @@ Created by group 3 of EECS2311.
 - [Iteration 1](#review)
   - [Overview](#overview)
   - [Architecture](#architecture)
-        - [Backend](#backend)
-        - [User Interface](#user-interface)
-        - [Persistence](#persistence)
+    - [Backend](#backend)
+    - [User Interface](#user-interface)
+    - [Persistence](#persistence)
 - [Running MediaVault](#running-mediavault)
 
 ## Description
